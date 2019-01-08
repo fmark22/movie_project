@@ -1,0 +1,31 @@
+<div class="new-review">
+  <div class="reviewed-head">
+      <h1>새 리뷰쓰기</h1>
+      </div>
+  
+  <div class="reviews-body">
+<!--    <form action="/reviews/create" method="post">-->
+<!--      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>-->
+<!--      <p> -->
+<!--      제목 : <input type="text" name="title" />-->
+<!--      </p>-->
+<!--      <p> -->
+<!--      평점 : <input type="number" name="ratio" />-->
+<!--      </p>-->
+<!--      <p> -->
+<!--      내용 : <textarea cols="50" rows="20" name="content">-->
+<!--       </textarea>-->
+<!--      </p>-->
+<!--      <input type="submit" value="제출" />-->
+<!--      <input type="reset" value="취소" />-->
+<!--    </form>-->
+<!--  </div>  -->
+<!--</div>  -->
+
+
+    <%= form_for @review, url: {action: "create"} do |f| %>
+     제목 <%= f.text_field :title %><br/>
+     평점 <%= number_field(:product, :price, in: 1.0..10.0) %><br/>
+     내용 <%= f.text_area :content, size: "60x12" %><br/>
+      <%= f.submit "제출" %>
+    <% end %>

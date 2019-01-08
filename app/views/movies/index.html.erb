@@ -1,0 +1,16 @@
+<h1>Movies#index</h1>
+
+<% @movies.each do |movie| %>
+  
+<!--      <% @movies.each do |movie| %>-->
+      <!--<% if movie["year"] == 1994 %>-->
+      <!--이러ㅣ마이릴<br>-->
+      <!--<% else %>-->
+      
+     <p>
+       <%= movie["title"] %> | <%= movie["year"] %> <br>
+     </p>
+  <img src=<%= movie["small_cover_image"] %>>
+  <% end %>
+<% end %>
+<% end %>

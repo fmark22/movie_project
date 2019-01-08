@@ -1,0 +1,29 @@
+<div class="reviews">
+    <div class="reviews-head">
+        <h1>리뷰</h1>
+        <!--리뷰번호, 제목, 내용, 평점-->
+    </div>
+    
+    <hr/>
+    총 <strong>45</strong>개
+     <a href="/reviews/new" class="myButton">리뷰쓰기</a>
+    <hr/>
+
+<!--반복문-->
+      <% @review.each do |review| %>
+        <div class="review">
+          리뷰번호: <%= review.id %> <br/>
+          제목 : <a href="/reviews/<%= review.id %>/show"><%= review.title %></a> | 
+          평점: <%= review.ratio %> | 
+          <a href="/reviews/<%= review.id %>/edit">
+            <button>수정</button>
+          </a>
+          <a href="/reviews/<%= review.id %>/delete" data-confirm="진짜 지울거에요?"> 
+            <button>삭제</button>
+          </a>
+          <hr/>
+      <% end %>
+      
+      
+</div>
+
